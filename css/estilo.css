@@ -1,0 +1,90 @@
+
+h1 {
+    color: rgb(255, 140, 0);
+    font-size: 24px;
+    text-align: center;
+} /* fim h1 */
+
+ul {
+    list-style: none; /* remove marcador */
+    border: 4px solid; /* cria uma borda solida */
+    border-color: rgb(255, 2, 2); /* cor da borda */
+    background-color: lightgrey; /* plano de fundo */
+    padding: 4px; /* margem interna */
+} /* fim ul */
+ul li {
+    background-color: yellow;
+}
+/* Estilo da galeria */
+ul {
+    list-style: none;
+}
+ul li {
+    text-align: center;
+    background-color: aliceblue;
+    padding: 4px;
+    margin: 4px;
+}
+
+.titulo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 22pt;
+    color: midnightblue;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.titulonormal {
+    font-size: 22pt;
+}
+.titulopequeno {
+    font-size: 16pt;
+}
+
+.textomaispequenoainda {
+    text-align: justify;
+    font-size: 12pt;
+}
+
+@font-face {
+    font-family: "Comic Sans";
+    src:
+      url("/fontes/comicbd.ttf") format("truetype"),
+      url("/fontes/comic.ttf") format("truetype");
+  }
+
+.comicsans {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 22pt;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.papyrus {
+    font-family: "Cppperplate", "Papyrus", fantasy;
+    font-size: 22pt;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.fundo {
+    background-color: rgb(145, 110, 164);
+}
+
+.botao {
+    font-weight: bold;
+    padding: 4px;
+}
+
+body {
+    background-color: azure;
+}
+
+.blocotextoteste {
+    background-color: blue;
+    width: 500px;
+    height: 400px;
+    margin: 5px;
+    border-radius: 2%;
+}
