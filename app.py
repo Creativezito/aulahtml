@@ -38,7 +38,11 @@ def potencial(numero: float, potencia: float):
     return f"""<p>O Número: {numero} e a Potencia de {potencia} é equivalente a
     = {numero**potencia}</p>"""
 
+@app.route("/tabuada")
+@app.route("/tabuada/<numero>", methods=('GET',))
+def tabuada (numero= None):
 
-@app.route("/tabuada/<int:numero>", methods=('GET',))
-def tabuada (numero: int):
+    if 'numero' in request.args:
+        numero = int(request.args.get('numero'))
+
     return render_template('tabuada.html', numero=numero)
