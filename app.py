@@ -1,4 +1,4 @@
-from flask import (Flask, render_template, request)
+from flask import (Flask, render_template, request,)
 
 app = Flask(__name__)
 
@@ -46,3 +46,13 @@ def tabuada (numero= None):
         numero = int(request.args.get('numero'))
 
     return render_template('tabuada.html', numero=numero)
+
+@app.route("/login")
+def login(email = None, senha= None):
+    if 'email' and 'senha' in request.args:
+        email = request.args.get('email')
+        senha = request.args.get('senha')
+    
+    return render_template('login.html', email=email, senha=senha)
+    
+
