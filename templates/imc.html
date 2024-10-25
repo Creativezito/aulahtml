@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<form>
+    <h1>Cálculo do IMC</h1>
+
+    <label>Digite os seu Peso(kg): </label> <br>
+    <input type="number" step=".001" name="peso" /> <br>
+
+    <label>Digite sua altura(m): </label> <br>
+    <input type="number" step=".001" name="altura" /> <br>
+
+    <button type="submit">Calcular</button>
+</form>
+
+{% if peso and altura %}
+<hr>
+{% if peso/(altura**2) < 18.5 %}
+<h1>Magreza</h1>
+<h2>Obesidade 0</h2>
+<p>Você está muito baixo do peso, deve realizar formas de deixar o seu peso normal!</p>
+
+{% elif peso/(altura**2) < 24.9 %}
+<h1>Normal</h1>
+<h2>Obesidade 0</h2>
+<p>Você está nem abaixo do peso e nem acima do peso, se mantenha assim!</p>
+
+{% elif peso/(altura**2) < 29.9 %}
+<h1>Sobrepeso</h1>
+<h2>Obesidade I</h2>
+<p>Você está um pouco acima do peso, deve realizar cortes de algumas comidas e praticar mais exercícios!</p>
+
+{% elif peso/(altura**2) < 39.9 %}
+<h1>Obesidade normal</h1>
+<h2>Obesidade II</h2>
+<p>Você está um bem acima do peso, fazer uma dieta e praticar exercícios físicos pode te ajudar a sair da obesidade!</p>
+
+{% else %}
+<h1 style="color: red;">Obesidade grave </h1>
+<h2 style="color: red;">Obesidade III</h2>
+<p style="color: red;">Você está um muito acima do peso, é necessário fazer uma dieta e praticar exercícios físicos pois isso pode causar problemas para a saúde!</p>
+{% endif %}
+<p>Seu IMC é {{peso/(altura**2)}}</p>
+<hr>
+{% endif %}
+
+{% endblock %}

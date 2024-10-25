@@ -77,3 +77,11 @@ def juros(capital = None, juros = None, anos = None, aporte = None):
     
     return render_template('juros.html', capital=capital, anos=anos, juros=juros, aporte=aporte)
 
+@app.route("/imc", methods=("GET",))
+def imc(peso = None, altura= None):
+  
+  if "peso" and "altura" in request.args:
+    peso =float(request.args.get('peso')) 
+    altura=float(request.args.get('altura'))
+    
+  return render_template("imc.html", peso=peso, altura=altura)
