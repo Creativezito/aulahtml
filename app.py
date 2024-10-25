@@ -55,4 +55,25 @@ def login(email = None, senha= None):
     
     return render_template('login.html', email=email, senha=senha)
     
+@app.route("/juros")
+@app.route("/juros/<capital>/<juros>/<anos>/<aporte>",methods=('GET',))
+def juros(capital = None, juros = None, anos = None, aporte = None): 
+
+    if 'capital' in request.args:
+        capital = request.args.get('capital')
+        capital = float (request.args.get('capital'))
+
+    if 'juros' in request.args:
+        juros = request.args.get('juros')
+        juros = float (request.args.get('juros'))
+
+    if 'anos' in request.args:
+        anos = request.args.get('anos')
+        anos = float (request.args.get('anos'))
+
+    if 'aporte' in request.args:
+        aporte = request.args.get('aporte')
+        aporte = float (request.args.get('aporte'))
+    
+    return render_template('juros.html', capital=capital, anos=anos, juros=juros, aporte=aporte)
 
